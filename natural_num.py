@@ -1,5 +1,7 @@
-num = int(input("Enter a natural number "))
-i=1
-while i<=num:
-	print("my value =",i)
-	i=i+1s
+#print the List of Natural Numbers from 1 to n
+number = int(input("Please Enter any Number: "))
+i = 1
+print("The List of Natural Numbers from 1 to n are") 
+while ( i <= number):
+    print (i, end=' ')
+    i = i + 1
