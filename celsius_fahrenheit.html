@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var lab1 = document.createElement("label");
+    lab1.innerHTML="Enter the temperature in deg celsius = ";
+    document.body.appendChild(lab1)
+
+    var x = document.createElement("input");
+    x.id="value1";
+    document.body.appendChild(x);
+
+    linebreak1=document.createElement("br");
+    document.body.appendChild(linebreak1);
+
+    var lab2 = document.createElement("label");
+    lab2.innerHTML="converted to Fahrenheit    =    ";
+    document.body.appendChild(lab2);
+
+    var y = document.createElement("input");
+    document.body.appendChild(y);
+
+    linebreak2=document.createElement("br");
+    document.body.appendChild(linebreak2);
+
+    var sum=document.createElement("button");
+    document.body.appendChild(sum);
+    sum.innerHTML="Result";
+    sum.addEventListener("click",function(){
+        calculate();
+    });
+    
+
+    function calculate(){
+        var val1=parseInt(document.getElementById("value1").value);
+        var output1 =(val1*9/5)+32;
+        console.log(output1);
+        y.value=output1;
+
+    }
+</script>
+</body>
+</html>

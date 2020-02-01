@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var x = document.createElement("input");
+    x.id="value1";
+    document.body.appendChild(x);
+    var btn =document.createElement("button");
+    document.body.appendChild(btn);
+    btn.innerHTML="num1";
+    
+  
+    var y = document.createElement("input");
+    y.id="value2";
+    document.body.appendChild(y);
+  
+
+
+    var z = document.createElement("input");
+    document.body.appendChild(z);
+    
+    var sum=document.createElement("button");
+    document.body.appendChild(sum);
+    sum.innerHTML="area";
+    sum.addEventListener("click",function(){
+        Area();
+    });
+    
+
+    function Area(){
+        var length=parseInt(document.getElementById("value1").value);
+        var breadth=parseInt(document.getElementById("value2").value);
+        var area = (length*breadth);
+        console.log(area);
+        z.value=area;
+    }
+
+
+</script>
+</body>
+</html>

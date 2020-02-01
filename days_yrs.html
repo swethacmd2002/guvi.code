@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var lab1 = document.createElement("label");
+    lab1.innerHTML="Enter the days = ";
+    document.body.appendChild(lab1)
+
+    var x = document.createElement("input");
+    x.id="value1";
+    document.body.appendChild(x);
+
+    linebreak1=document.createElement("br");
+    document.body.appendChild(linebreak1);
+
+    var lab2 = document.createElement("label");
+    lab2.innerHTML="converted to year     =    ";
+    document.body.appendChild(lab2);
+
+    var y = document.createElement("input");
+    document.body.appendChild(y);
+
+    linebreak2=document.createElement("br");
+    document.body.appendChild(linebreak2);
+
+
+    var lab3 = document.createElement("label3");
+    lab3.innerHTML="converted to month = ";
+    document.body.appendChild(lab3);
+
+    var z = document.createElement("input");
+    document.body.appendChild(z);
+
+    linebreak3=document.createElement("br");
+    document.body.appendChild(linebreak3);
+
+
+    var lab4 = document.createElement("label4");
+    lab4.innerHTML="converted to week  = ";
+    document.body.appendChild(lab4);
+
+    var m = document.createElement("input");
+    document.body.appendChild(m);
+
+    
+    var sum=document.createElement("button");
+    document.body.appendChild(sum);
+    sum.innerHTML="Result";
+    sum.addEventListener("click",function(){
+        add();
+    });
+    
+
+    function add(){
+        var val1=parseInt(document.getElementById("value1").value);
+        var output1 =val1/365;
+        console.log(output1);
+        y.value=output1;
+
+        var output2 =val1/30;
+        console.log(output2);
+        z.value=output2;
+
+        var output3 =val1/7;
+        console.log(output3);
+        m.value=output3;
+    }
+
+
+</script>
+</body>
+</html>

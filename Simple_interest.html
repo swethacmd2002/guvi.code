@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var lab1 = document.createElement("label");
+    lab1.innerHTML="Total Accured Amount :  ";
+    document.body.appendChild(lab1)
+
+    var x = document.createElement("input");
+    x.id="value1";
+    document.body.appendChild(x);
+
+    linebreak1=document.createElement("br");
+    document.body.appendChild(linebreak1);
+
+    var lab2 = document.createElement("label");
+    lab2.innerHTML="Principal amount :  ";
+    document.body.appendChild(lab2);
+
+    var y = document.createElement("input");
+    y.id="value2";
+    document.body.appendChild(y);
+
+    linebreak2=document.createElement("br");
+    document.body.appendChild(linebreak2);
+
+
+    var lab3 = document.createElement("labe3");
+    lab3.innerHTML="Interest amount = ";
+    document.body.appendChild(lab3);
+
+    var l = document.createElement("input");
+    l.id="value3";
+    document.body.appendChild(l);
+
+    linebreak3=document.createElement("br");
+    document.body.appendChild(linebreak3);
+
+    var lab4 = document.createElement("label");
+    lab4.innerHTML="Simple Interest  = ";
+    document.body.appendChild(lab4);
+
+    var z = document.createElement("input");
+    document.body.appendChild(z);
+    
+    var sum=document.createElement("button");
+    document.body.appendChild(sum);
+    sum.innerHTML="Result";
+    sum.addEventListener("click",function(){
+        SI();
+    });
+    
+
+    function SI(){
+       
+        var P =parseInt(document.getElementById("value1").value);
+        var R =parseInt(document.getElementById("value2").value);
+        var t =parseInt(document.getElementById("value3").value);
+        var output = P*(1+(R/100)*t);
+        console.log(output);
+        z.value=output;
+    }
+
+
+</script>
+</body>
+</html>

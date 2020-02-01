@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var lab1 = document.createElement("label");
+    lab1.innerHTML="Enter the length :  ";
+    document.body.appendChild(lab1)
+
+    var x = document.createElement("input");
+    x.id="value1";
+    document.body.appendChild(x);
+
+    linebreak1=document.createElement("br");
+    document.body.appendChild(linebreak1);
+
+    var lab2 = document.createElement("label");
+    lab2.innerHTML="Enter the breadth :  ";
+    document.body.appendChild(lab2);
+
+    var y = document.createElement("input");
+    y.id="value2";
+    document.body.appendChild(y);
+
+    var lab3 = document.createElement("labe3");
+    lab3.innerHTML="Area of rectangle = ";
+    document.body.appendChild(lab3);
+
+    var z = document.createElement("input");
+    document.body.appendChild(z);
+    
+    var sum=document.createElement("button");
+    document.body.appendChild(sum);
+    sum.innerHTML="Result";
+    sum.addEventListener("click",function(){
+        add();
+    });
+    
+
+    function add(){
+        var val1=parseInt(document.getElementById("value1").value);
+        var val2=parseInt(document.getElementById("value2").value);
+        var output =val1*val2;
+        console.log(output);
+        z.value=output;
+    }
+
+
+</script>
+</body>
+</html>
