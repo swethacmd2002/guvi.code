@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TicTacToevv</title>
+		<style type="text/css">
+
+			h1{
+				text-align: center;
+			}
+
+			h3{
+				text-align: center;
+				color: purple;
+			}
+
+			table{
+				margin: auto;
+				margin-top: 70px;
+				background: orange;
+
+			}
+			
+			td{
+				width:100px;
+				height:100px;
+				cursor: pointer;
+				text-align:center;
+			}
+
+			div{
+				margin-left: 50%;
+				margin-top: 70px;
+			}
+
+			.vertical{
+
+				border-left:1px solid black;
+				border-right:1px solid black;
+			}
+
+			.horizontal{
+				border-top:1px solid black;
+				border-bottom:1px solid black;
+			}
+
+		</style>
+	</head>
+	<body>
+		<h1>Tic Tac Toe</h1>
+
+		<h3 id="who_play"></h3>
+		<table id=reseter>
+			<tr>
+				<td id="0" class="cell" onclick="play(this)"></td>
+				<td id="1" class="vertical cell" onclick="play(this)"></td>
+				<td id="2" class="cell" onclick="play(this)"></td>
+			</tr>
+			<tr>
+				<td id="3" class="horizontal cell" onclick="play(this)"></td>
+				<td id="4" class="vertical horizontal cell" onclick="play(this)"></td>
+				<td id="5" class="horizontal cell" onclick="play(this)"></td>
+			</tr>
+			<tr>
+				<td id="6" class="cell" onclick="play(this)"></td>
+				<td id="7" class="vertical cell" onclick="play(this)"></td>
+				<td id="8" class="cell" onclick="play(this)"></td>
+			</tr>
+		</table>
+		<div>
+			<button onclick="Reset('cell')" size="7">Reset</button></div>
+		<script type="text/javascript">
+			let count=0;
+			let count2=0;
+			let options_played=[];
+			let a=[0,0,0,0,0,0,0,0,0];
+			document.getElementById('who_play').innerHTML="X turn to play"
+			
+			
+			function play(cell){
+
+				if(count2==0){
+
+				if(cell.innerText != ''){
+					alert("already played here");
+				}
+				else{
+				if(count%2==0){
+					document.getElementById('who_play').innerHTML="O turn to Play"
+					cell.innerHTML="X";
+					console.log("1");
+					console.log(cell.id);
+					console.log(count);
+					options_played.push(cell.id);
+					a[cell.id]=1;
+					Totaler()
+				}
+				if(count%2==1){
+					document.getElementById('who_play').innerHTML="X turn to play"
+					cell.innerHTML="O";
+					console.log("-1");
+					options_played.push(cell.id);
+					a[cell.id]=-1;
+					Totaler()
+					
+				}
+					count++;
+					console.log(options_played);
+					console.log(options_played.values);
+					JSON.stringify(options_played);
+					console.log(a);
+					
+					function Totaler(){
+
+						if(a[0]+a[1]+a[2]==3||a[3]+a[4]+a[5]==3||a[6]+a[7]+a[8]==3||a[0]+a[3]+a[6]==3||a[1]+a[4]+a[7]==3||a[2]+a[5]+a[8]==3||a[0]+a[4]+a[8]==3||a[2]+a[4]+a[6]==3 ){
+							document.getElementById('who_play').innerHTML="X Winner"
+							count2++
+							return alert("X is the winner")
+							
+						}
+						else if(a[0]+a[1]+a[2]==-3||a[3]+a[4]+a[5]==-3||a[6]+a[7]+a[8]==-3||a[0]+a[3]+a[6]==-3||a[1]+a[4]+a[7]==-3||a[2]+a[5]+a[8]==-3||a[0]+a[4]+a[8]==-3||a[2]+a[4]+a[6]==-3 ){
+							document.getElementById('who_play').innerHTML="O Winner"
+							count2++
+							return alert("O is the winner")
+							
+						}
+						if(count>=8){
+							document.getElementById('who_play').innerHTML="It's a draw"
+							count2++
+							return alert("It is a draw")
+							
+
+						}
+
+					}
+
+					function whoplay(){}
+
+
+					}			
+
+			}
+			else if(count!= 0){ 
+				 alert("Game over")
+			}
+		}
+
+		function Reset(){
+
+			
+			
+			count=0;
+			count2=0;
+			options_played=[];
+			a=[0,0,0,0,0,0,0,0,0];
+			document.getElementById('who_play').innerHTML="X turn to play"
+			for(var j=0;j<=a.length;j++){
+				document.getElementsByClassName('cell')[j].innerHTML='';
+			}
+
+		}
+		
+
+
+
+		</script>
+
+	</body>
+</html>
