@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic Calculator</title>
+<style type="text/css">
+    .calc_bg {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgb(2, 219, 248);
+        width: 320px;
+        }
+    .display {
+        width: 100%;
+        height: 60px;
+        padding: 40px 0;
+        background: rgb(205, 182, 231);
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+        }
+    .buttons {
+        padding: 40px 20px 0 20px;
+        }
+    .divs {
+        width: 280px;
+        float: left;
+        }
+    input[type=button] {
+        width: 60px;
+        height: 60px;
+        float: left;
+        padding: 0;
+        margin: 5px;
+        box-sizing: border-box;
+        background: #ecedef;
+        border: none;
+        font-size: 30px;
+        line-height: 30px;
+        border-radius: 50%;
+        font-weight: 700;
+        color: #5E5858;
+        cursor: pointer;
+        }
+    input[type=text] {
+        width: 270px;
+        height: 60px;
+        float: left;
+        padding: 0;
+        box-sizing: border-box;
+        border: none;
+        background: none;
+        text-align: right;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 60px;
+        margin: 0 25px;
+        }
+    .red {
+        color: #e90f0f !important;
+        }
+    .green {
+        color: #47f113 !important;
+        }
+</style>
+</head>
+<body>
+    <div class="calc_bg">
+    <form name="form" id="createForm">
+        <div class="display">
+        <input type="text" placeholder="0" name="displaypro">
+        </div>
+        <input type="button" onclick="myFunction()" value="C" class="red">
+        <h2>Calculator</h2>
+        <div class="divs">
+        <input type="button" name="btn7" value="7" onClick="calcEval(btn7.value)">
+        <input type="button" name="btn8" value="8" onClick="calcEval(btn8.value)">
+        <input type="button" name="btn9" value="9" onClick="calcEval(btn9.value)">
+        <input type="button" name="addition" value="+" onClick="calcEval(addition.value)">
+    </div>
+    <div class="divs">
+        <input type="button" name="btn4" value="4" onClick="calcEval(btn4.value)">
+        <input type="button" name="btn5" value="5" onClick="calcEval(btn5.value)">
+        <input type="button" name="btn6" value="6" onClick="calcEval(btn6.value)">
+        <input type="button" name="subtraction" value="-" onClick="calcEval(subtraction.value)">
+    </div>
+    <div class="divs">
+        <input type="button" name="btn1" value="1" onClick="calcEval(btn1.value)">
+        <input type="button" name="btn2" value="2" onClick="calcEval(btn2.value)">
+        <input type="button" name="btn3" value="3" onClick="calcEval(btn3.value)">
+        <input type="button" name="multiplication" value="*" onClick="calcEval(multiplication.value)">
+    </div>
+    <div class="divs">
+        <input type="button" name="btn0" value="0" onClick="calcEval(btn0.value)">
+        <input type="button" name="dot" value="." onClick="calcEval(dot.value)">
+        <input type="button" name="division" value="/" onClick="calcEval(division.value)">
+        <input type="button" class="green" value="=" onClick="displaypro.value=eval(displaypro.value)">
+    </div>
+    </form>
+</body>
+<script>
+function calcEval(pro){
+    form.displaypro.value=form.displaypro.value+pro;
+    }
+function myFunction() {
+    document.getElementById("createForm").reset();
+    }
+</script>
+</html>
+
+
+
+
+
+
+
+
